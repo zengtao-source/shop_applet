@@ -1,0 +1,24 @@
+{
+  "name": "uni-shop",
+  "version": "1.0.0",
+  "description": "详情参见[起步文档说明地址](https://applet-base-api-t.itheima.net/docs-uni-shop/1.start.html)",
+  "main": "main.js",
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zengtao-source/shop_applet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zengtao-source/shop_applet/issues"
+  },
+  "homepage": "https://github.com/zengtao-source/shop_applet#readme"
+}

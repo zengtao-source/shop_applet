@@ -2,7 +2,7 @@
   "pages": [{
       "path": "pages/home/home",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "白马优购",
         "enablePullDownRefresh": false
       }
     },
@@ -37,7 +37,6 @@
       "background": "#efeff4"
     }
   },
-  // 
   "tabBar": {
     "selectedColor": "#c00000", // 配置tabbar图标下面的文字颜色
     "list": [{
@@ -64,5 +63,29 @@
         "selectedIconPath": "static/tab_icons/my-active.png"
       }
     ]
-  }
+  },
+  "subPackages": [{
+    "root": "subpkg",
+    "pages": [
+
+    {
+                    "path" : "good_detail/good_detail",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "goods_list/goods_list",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+  }]
 }
