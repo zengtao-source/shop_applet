@@ -52,6 +52,16 @@ pages.json 中 `pages` 属性的第一个对象的 `navigationBarTitleText` 可�
 ```
 
 ## 4.分类
+### 具体操作步骤
+详情参见[分类文档说明地址](https://applet-base-api-t.itheima.net/docs-uni-shop/4.cate.html)
+### 注意点
+1. 使用竖向滚动时，需要给 `<scroll-view>` 一个固定高度，通过 css 设置 height；使用横向滚动时，需要给`<scroll-view>`添加white-space: nowrap;样式。
+2. 小程序动态类名的设置方式 
+- 1. 详情参见[vue官网](https://v2.cn.vuejs.org/v2/guide/class-and-style.html#ad)
+- 2. 对象语法
+- 3. 数组语法
+3. css的`flex-direction`和`flex-wrap`
+4. 给 `<scroll-view>`设置 `scroll-top`时需要加`this.$nextTick(function() {})` 防止view层不同步渲染问题
 ## 5.搜索
 ## 6.商品列表
 ## 7.商品详情
