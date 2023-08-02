@@ -19,7 +19,7 @@
          -->
         <navigator class="swiper-item" :url="`../../subpkg/good_detail/good_detail?goods_id=${item.goods_id}`">
           <image :src="item.image_src"></image>
-        </navigator >
+        </navigator>
       </swiper-item>
     </swiper>
     <!-- 分类导航区域 -->
@@ -46,21 +46,22 @@
             widthFix：宽度不变，高度自动变化，保持原图宽高比不变
             heightFix：高度不变，宽度自动变化，保持原图宽高比不变
              -->
-            
-            <image :src="floorListItem.product_list[0].image_src" :style="{width: floorListItem.product_list[0].image_width + 'rpx'}" mode="widthFix"></image>
-          </navigator >
+
+            <image :src="floorListItem.product_list[0].image_src"
+              :style="{width: floorListItem.product_list[0].image_width + 'rpx'}" mode="widthFix"></image>
+          </navigator>
           <!-- 右侧 4 个小图片盒子 -->
           <view class="right-img-box">
-            <navigator class="right-img-item" v-for="(productList, productListI) in floorListItem.product_list" :key="productListI " v-if="productListI !== 0" :url="productList.url">
-              <image :src="productList.image_src" mode="widthFix" :style="{width: productList.image_width + 'rpx'}"></image>
-            </navigator>
-            <!-- <view class="right-img-item" v-for="(productList, productListI) in floorListItem.product_list" :key="productListI " v-if="productListI !== 0">
-            </view> -->
+            <view v-for="(productList, productListI) in floorListItem.product_list" :key="productListI">
+              <navigator class="right-img-item" v-if="productListI !== 0" :url="productList.url">
+                <image :src="productList.image_src" mode="widthFix" :style="{width: productList.image_width + 'rpx'}">
+                </image>
+              </navigator>
+            </view>
           </view>
-          
         </view>
       </view>
-      
+
     </view>
   </view>
 </template>
@@ -109,7 +110,9 @@
       // 获取分类导航数据
       async getNavList() {
         // 1. 发起请求
-        const {data: res} = await uni.$http.get('/api/public/v1/home/catitems')
+        const {
+          data: res
+        } = await uni.$http.get('/api/public/v1/home/catitems')
         // 2. 请求失败
         if (res.meta.status !== 200) return uni.$showMsg()
         // 3. 请求成功 为 data 中的数据赋值
@@ -118,10 +121,12 @@
       // 获取楼层数据
       async getFloorList() {
         // 1. 发起请求
-        const {data: res} = await uni.$http.get('/api/public/v1/home/floordata')
+        const {
+          data: res
+        } = await uni.$http.get('/api/public/v1/home/floordata')
         // 2. 请求失败
         if (res.meta.status !== 200) return uni.$showMsg()
-        console.log(res.message, 'res.message === floor')
+        // console.log(res.message, 'res.message === floor')
         // 2.5. 数据请求成功，赋值数据之前处理一下数据
         // 通过双层forEach循环，处理url地址
         res.message.forEach(floor => {
@@ -145,37 +150,43 @@
 </script>
 
 <style lang="scss">
-swiper {
-  height: 300rpx;
-  .swiper-item,
-  image{
-    width: 100%;
-    height: 100%;
-  }
-}
-.nav-list {
-  display: flex;
-  justify-content: space-around;
-  margin: 15px 0;
-  .nav-img {
-    width: 128rpx;
-    height: 140rpx;
-  }
-}
-.floor-list {
-  .floor-title{
-    height: 60rpx;
-    width: 100%;
-    display: flex;
-  }
-  .floor-img-box {
-    display: flex;
-    padding-left: 10rpx;
-    .right-img-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+  swiper {
+    height: 300rpx;
+
+    .swiper-item,
+    image {
+      width: 100%;
+      height: 100%;
     }
   }
-}
+
+  .nav-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+
+    .nav-img {
+      width: 128rpx;
+      height: 140rpx;
+    }
+  }
+
+  .floor-list {
+    .floor-title {
+      height: 60rpx;
+      width: 100%;
+      display: flex;
+    }
+
+    .floor-img-box {
+      display: flex;
+      padding-left: 10rpx;
+
+      .right-img-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+    }
+  }
 </style>

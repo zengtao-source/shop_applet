@@ -9,21 +9,21 @@
     {
       "path": "pages/cate/cate",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "白马优购",
         "enablePullDownRefresh": false
       }
     },
     {
       "path": "pages/cart/cart",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "白马优购",
         "enablePullDownRefresh": false
       }
     },
     {
       "path": "pages/my/my",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "白马优购",
         "enablePullDownRefresh": false
       }
     }
