@@ -3,7 +3,6 @@
     <view class="search-box">
       <uni-search-bar @input="input" :radius="100" cancelButton="none"></uni-search-bar>
     </view>
-    
     <!-- 搜索建议列表 -->
     <view class="sugg-list" v-if="searchResults.length !== 0">
       <view class="sugg-item" v-for="(item, i) in searchResults" :key="i" @click="gotoDetail(item.goods_id)">
@@ -27,7 +26,6 @@
     </view>
   </view>
 </template>
-
 <script>
   export default {
     data() {
@@ -126,7 +124,6 @@
     },
   }
 </script>
-
 <style lang="scss">
   .search-box {
     position: sticky;
