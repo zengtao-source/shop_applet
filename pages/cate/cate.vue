@@ -1,5 +1,7 @@
 <template>
   <view>
+    <!-- 使用自定义的搜索组件 -->
+    <my-search @click="gotoSearch"></my-search>
     <!-- 容器 -->
     <view class="scroll-view-container">
       <!-- 左侧滚动视图区域  -->
@@ -52,7 +54,7 @@
       const sysInfo = uni.getSystemInfoSync()
       // console.log(sysInfo, '===sys')
       // 为 wh 窗口可用高度动态赋值
-      this.wh = sysInfo.windowHeight
+      this.wh = sysInfo.windowHeight - 50
       // 调用获取分类列表数据的方法
       this.getCateList()
     },
@@ -69,6 +71,7 @@
         // 给右侧二级分类赋值数据
         this.cateListLevelTwo = res.message[0].children
       },
+      // 二级分类点击改变事件
       activeChanged(index) {
         // 左侧分类点击后赋值类名active
         this.active = index
@@ -82,11 +85,16 @@
       },
       // 三级分类跳转事件 item 当前列表数据
       gotoGoodsList(item) {
-        console.log(1111)
         uni.navigateTo({
           url: '/subpkg/goods_list/goods_list?cid=' + item.cat_id
         })
-      }
+      },
+      gotoSearch() {
+        // 跳转到分包中的搜索页面
+        uni.navigateTo({
+          url: '/subpkg/search/search'
+        })
+      },
     }
   }
 </script>
